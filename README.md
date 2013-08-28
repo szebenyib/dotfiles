@@ -17,7 +17,7 @@ Under construction :) as I'm learning git.
 + offlineimap
 + zsh
 
-###
+### AUR
 + urlview
 + goobook-git
 + python2-keyring
