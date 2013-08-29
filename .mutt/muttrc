@@ -1,0 +1,170 @@
+# Passes are only needed if not using keyrings
+#source "gpg2 -dq ~/.my-pwds.gpg |"
+
+# Editor and visual editing options
+set editor =		"vim"		#use vim
+set text_flowed =	yes		#text flow instead of >
+
+# Paths ----------------------------------------------
+set alias_file       = ~/.mutt/alias         # where to store aliases
+set header_cache     = ~/.mutt/cache/headers # where to store headers
+set message_cachedir = ~/.mutt/cache/bodies  # where to store bodies
+set certificate_file = ~/.mutt/certificates  # where to store certs
+set mailcap_path     = ~/.mutt/mailcap       # entries for filetypes
+set tmpdir           = ~/.mutt/temp          # where to keep temp files
+set signature        = ~/.mutt/sig           # my signature file
+
+#general
+set realname = "Bálint Szebenyi"
+set from = "szebenyib@gmail.com"
+set use_from = yes
+set envelope_from = yes
+
+set mail_check = 60 #check on every keystroke but not sooner than 60sec
+set beep_new = yes #fancy colors
+#imap
+#set imap_user=szebenyib@gmail.com
+#set imap_pass=$my_pw_gmail
+#For offline, built-in imap use the line below
+#set folder=imaps://imap.gmail.com
+set mbox_type = Maildir
+set folder = ~/.mail/szebenyib
+set spoolfile = "+INBOX"
+mailboxes = "+INBOX" \
+	+"ATW Online" \
+	+Erste \
+	+saturn \
+	+zsent \
+	+zspam \
+	+ztrash \
+	+zflagged \
+set mbox = "+all_mail" #don't know what it does
+set header_cache = ~/.cache/mutt
+set postponed = "+drafts"
+#unset imap_passive
+#set imap_keepalive = 300
+#set mail_check = 120
+
+#smtp
+unset record
+#commented out below are the lines that are for built in smtp
+#set smtp_url="smtp://szebenyib@smtp.gmail.com:587/"
+#set smtp_pass=$my_pw_gmail
+set from="szebenyib@gmail.com"
+set realname="Bálint Szebenyi"
+#set ssl_force_tls=yes
+set send_charset="utf-8"
+set sendmail = "/usr/bin/msmtp -a gmail"
+set sendmail_wait = 0
+
+#html
+auto_view text/html
+set mailcap_path=~/.mutt/mailcap
+
+#sidebar
+set sidebar_visible	= yes
+set sidebar_sort	= yes
+set sidebar_delim	= '  |'
+set sidebar_width	= 24
+macro index b '<enter-command>toggle sidebar_visible<enter><refresh>'
+macro pager b '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
+# Ctrl-n, Ctrl-p to select next, previous folder.
+# Ctrl-o to open selected folder.
+bind index,pager \CP sidebar-prev
+bind index,pager \CN sidebar-next
+bind index,pager \CO sidebar-open
+mailboxes "+A-- My mailbox ---------"
+
+# Status Bar -----------------------------------------
+set status_chars  = " *%A"
+set status_format = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
+
+# Header Options -------------------------------------
+ignore *                                # ignore all headers
+unignore from: to: cc: date: subject:   # show only these
+unhdr_order *                           # some distros order things by default
+hdr_order from: to: cc: date: subject:  # and in this order
+# Index View Options ---------------------------------
+#set date_format = "%m/%d"
+#set index_format = "[%Z]  %D  %-20.20F  %s"
+set sort = threads                         # like gmail
+set sort_aux = reverse-last-date-received  # like gmail
+set uncollapse_jump                        # don't collapse on an unread message
+set sort_re                                # thread based on regex
+set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
+# Index Key Bindings ---------------------------------
+bind index gg       first-entry
+bind index G        last-entry
+
+bind index R        group-reply
+bind index <tab>    sync-mailbox
+bind index <space>  collapse-thread
+
+# Ctrl-R to mark all as read
+macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
+
+# Sync email
+macro index O "<shell-escape>offlineimap<enter>"           "run offlineimap to sync all mail"
+macro index o "<shell-escape>offlineimap -qf INBOX<enter>" "run offlineimap to sync inbox"
+# Google contacts sync using goobook
+set query_command="goobook query '%s'"
+bind editor <Tab> complete-query
+macro index,pager a "<pipe-message>goobook add<return>" "add the sender address "
+# Saner copy/move dialogs
+macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
+macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
+
+# Sidebar Navigation ---------------------------------
+bind index,pager <down>   sidebar-next
+bind index,pager <up>     sidebar-prev
+bind index,pager <right>  sidebar-open
+
+# Pager View Options ---------------------------------
+set pager_index_lines = 20 # number of index lines to show
+set pager_context = 3      # number of context lines to show
+set pager_stop             # don't go to next message automatically
+set menu_scroll            # scroll in menus
+set tilde                  # show tildes like in vim
+unset markers              # no ugly plus signs
+
+set quote_regexp = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
+alternative_order text/plain text/enriched text/html
+
+# Pager Key Bindings ---------------------------------
+bind pager k  previous-line
+bind pager j  next-line
+bind pager gg top
+bind pager G  bottom
+
+bind pager R  group-reply
+
+# View attachments properly.
+bind attach <return> view-mailcap
+
+# Compose View Options -------------------------------
+set envelope_from                    # which from?
+set sig_dashes                       # dashes before sig
+set edit_headers                     # show headers when composing
+set fast_reply                       # skip to compose when replying
+#set askcc                            # ask for CC:
+set fcc_attach                       # save attachments with the body
+unset mime_forward                   # forward attachments as part of body
+set forward_format = "Fwd: %s"       # format of subject when forwarding
+set forward_decode                   # decode when forwarding
+set attribution = "On %d, %n wrote:" # format of quoting header
+set reply_to                         # reply to Reply to: field
+set reverse_name                     # reply as whomever it was to
+set include                          # include message in replies
+set forward_quote                    # include message in forwards
+#suppress hit/press any key to continue
+set wait_key = no
+#send later on by p
+bind compose p postpone-message
+bind index p recall-message
+
+#colors
+source ~/.mutt/colors
+
+#Http links
+#http://wcm1.web.rice.edu/mutt-tips.html
+#

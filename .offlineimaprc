@@ -1,0 +1,39 @@
+[general]
+accounts = szebenyib
+pythonfile = ~/.mutt/offlineimap.py
+maxaccounts = 1
+fsync = False
+#ui = machineui
+
+[Account szebenyib]
+localrepository = szebenyib-local
+remoterepository = szebenyib-remote
+status_backend = sqlite
+autorefresh = 3
+quick = 1
+postsynchook = notmuch new
+
+[Repository szebenyib-local]
+type = Maildir
+localfolders = ~/.mail/szebenyib
+nametrans = nt_local
+
+[Repository szebenyib-remote]
+type = Gmail
+remoteuser = szebenyib@gmail.com
+remotepasseval = keyring.get_password("offlineimap", "szebenyib@gmail.com")
+#remotepasseval = get_authinfo_password("imap.gmail.com", "szebenyib@gmail.com", 993)
+realdelete = yes
+keepalive = 60
+#holdconnectionopen = yes
+nametrans = nt_remote
+ssl = yes
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+
+[mbnames]
+enabled = yes
+filename = ~/.mutt/mailboxes
+header = "mailboxes "
+peritem = "+%(accountname)s/%(foldername)s"
+sep = " "
+footer = "\n"

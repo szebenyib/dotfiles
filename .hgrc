@@ -1,0 +1,6 @@
+[ui]
+username = Balint Szebenyib <szebenyib@gmail.com>
+editor = vim
+
+[hostfingerprints]
+hg.assembla.com = ba:a7:c2:ce:80:37:5c:8b:44:56:fe:d0:2b:c7:2c:bf:ae:5c:01:44

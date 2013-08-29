@@ -1,0 +1,8 @@
+[Unit]
+Description=Twmnd Service
+After=graphical.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/twmnd
+

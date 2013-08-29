@@ -1,0 +1,13 @@
+#!/usr/bin/python2
+import keyring
+
+print '[DEFAULT]'
+print 'email: szebenyib@gmail.com'
+print 'password: %s' % keyring.get_password('offlineimap', 'szebenyib@gmail.com')
+print 'cache_filename: ~/.goobook_cache'
+print 'cache_expiry_hours: 24'
+
+
+#old version below
+#!/bin/sh
+#gpg --no-tty --use-agent -q -d ~/.goobookrc.gpg
