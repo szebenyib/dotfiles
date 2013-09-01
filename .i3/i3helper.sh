@@ -6,6 +6,10 @@ if [ $1 = "volume" ]
 #Changes volume and notifies about volume related changes. Supports volume up,
 #down, and mute. Call example "sh i3helper.sh volume down".
 then
+	#Reading state info and stripping parentheses.
+	state=`amixer get Master | egrep -o "\[[^%]+\]" -m 1`
+	state=${state:1:-1}
+
 	if [ $2 = "up" ] || [ $2 = "down" ]
 	then
 		case $2 in
@@ -17,20 +21,24 @@ then
 				;;
 		esac
 		volume=`amixer get Master | egrep -o "[0-9]+%" -m 1`
-		notify-send "Volume" "♪: " -h "int:value:${volume:-1}"
+		if [ $state == "off" ]
+		then
+			notify-send "Volume" "♪: " -h "int:value:${volume:-1}" -h "string:fgcolor:$HLCOLOR"
+		else
+			notify-send "Volume" "♪: " -h "int:value:${volume:-1}"
+		fi
 	fi
 
 	if [ $2 = "mute" ]
 	then
 		amixer set Master toggle -q
-		state=`amixer get Master | egrep -o "\[[^%]+\]" -m 1`
-		#stripping parentheses
-		state=${state:1:-1}
+		#If the state was off at the beginning of the script it has
+		#been switched above so it is currently on now.
 		if [ $state == "off" ]
 		then
-			notify-send "Volume" "♪: $state" -h "string:fgcolor:$HLCOLOR"
+			notify-send "Volume" "♪: on"
 		else
-			notify-send "Volume" "♪: $state"
+			notify-send "Volume" "♪: off" -h "string:fgcolor:$HLCOLOR"
 		fi
 	fi
 elif [ $1 = "brightness" ]
