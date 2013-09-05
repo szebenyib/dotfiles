@@ -21,5 +21,17 @@ Under construction :) as I'm learning git.
 ### AUR
 + urlview
 + goobook-git
-+ python2-keyring
-+ python2-gnomekeyring
++ python2-keyring (used to store passwords to avoid plain text)
++ python2-gnomekeyring (used to store passwords to avoid plain text)
++ gnome-keyring (used to store passwords to avoid plain text)
+
+## Installation
+1. git clone the repo
+2. choose appropriate branch
+3. setup apps
+3.1. Keyring
+	~ python2
+	>>> import keyring
+	>>> keyring.set_password("offlineimap", "szebenyib@gmail.com", "guesswhatcomeshere¨)
+	[enter an arbitrary password in the window that pops up]
+
