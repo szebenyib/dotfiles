@@ -32,6 +32,6 @@ Under construction :) as I'm learning git.
 3.1. Keyring
 	~ python2
 	>>> import keyring
-	>>> keyring.set_password("offlineimap", "szebenyib@gmail.com", "guesswhatcomeshere¨)
+	>>> keyring.set_password("offlineimap", "username@gmail.com", "guesswhatcomeshere¨)
 	[enter an arbitrary password in the window that pops up]
 
