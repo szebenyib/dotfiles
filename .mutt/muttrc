@@ -28,7 +28,7 @@ set beep_new = yes #fancy colors
 #For offline, built-in imap use the line below
 #set folder=imaps://imap.gmail.com
 set mbox_type = Maildir
-set folder = ~/.mail/szebenyib
+set folder = /mnt/archhome/szebenyib/.mail/szebenyib
 set spoolfile = "+INBOX"
 mailboxes = "+INBOX" \
 	+"ATW Online" \
