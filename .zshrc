@@ -15,6 +15,7 @@ compinit
 ## Aliases
 alias zsc="vim -c ~/.zshrc"
 alias sps="sudo pacman -S "
+alias ls="ls --color=auto"
 alias lsl="ls -al"
 
 ## Use Prompt
@@ -34,23 +35,28 @@ eval PR_BOLD="%{$terminfo[bold]%}"
 
 # Check the UID
 if [[ $UID -ge 1000 ]]; then # normal user
-  local PR_PROMPT_BEGIN="$PR_NO_COLOR$PR_BGBLUE⮀$PR_NO_COLOR"
+  local PR_PROMPT_BEGIN="$PR_NO_COLOR$PR_NO_COLOR"
   eval PR_USER="${PR_BGBLUE}%n@${PR_NO_COLOR}"
   eval PR_USER_OP="${PR_BGBLUE}\ %#${PR_NO_COLOR}"
   eval PR_BRACKET_OPEN="${PR_BGBLUE}[${PR_NO_COLOR}"
   eval PR_BRACKET_CLOSE="${PR_BGBLUE}]${PR_NO_COLOR}"
   local PR_PROMPT_END="$PR_FGBLUE$PR_NO_COLOR "
 elif [[ $UID -eq 0 ]]; then # root
-  local PR_PROMPT_BEGIN="$PR_BGRED$PR_NO_COLOR"
-  eval PR_USER="${PR_BGRED}%n$@{PR_NO_COLOR}"
-  eval PR_USER_OP="${PR_BGRED}\ %#${PR_NO_COLOR}"
+  local PR_PROMPT_BEGIN="${PR_BGRED}${PR_NO_COLOR}"
+  eval PR_USER="${PR_BGRED}%n${PR_BGBLUE}@${PR_NO_COLOR}"
+  eval PR_USER_OP="${PR_BGBLUE}\ %#${PR_NO_COLOR}"
   eval PR_BRACKET_OPEN="${PR_BGBLUE}[${PR_NO_COLOR}"
   eval PR_BRACKET_CLOSE="${PR_BGBLUE}]${PR_NO_COLOR}"
-  local PR_PROMPT_END="$PR_FGRED$PR_NO_COLOR "
+  local PR_PROMPT_END="${PR_FGRED}${PR_NO_COLOR} "
 fi
 # Check if we are on SSH or not
-if [[ -n "$SSH_CLIENT"  ||  -n "$SSH2_CLIENT" ]]; then 
-  eval PR_HOST="${PR_BGYELLOW}%M${PR_NO_COLOR}" #SSH
+if [[ -n "$SSH_CLIENT"  ||  -n "$SSH2_CLIENT" ]]; then # SSH
+	if [[ `hostname -s` = saturn ]];
+	then
+		eval PR_HOST="${PR_BGGREEN}%M${PR_NO_COLOR}"
+	else
+		eval PR_HOST="${PR_BGYELLOW}%M${PR_NO_COLOR}"
+	fi
 else
   eval PR_HOST="${PR_BGBLUE}%M${PR_NO_COLOR}" # no SSH
 fi

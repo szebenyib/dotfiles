@@ -29,9 +29,11 @@ Under construction :) as I'm learning git.
 1. git clone the repo
 2. choose appropriate branch
 3. setup apps
-3.1. Keyring
+-Keyring
 	~ python2
 	>>> import keyring
 	>>> keyring.set_password("offlineimap", "username@gmail.com", "guesswhatcomeshere¨)
 	[enter an arbitrary password in the window that pops up]
-
+-ZSHRC
+	Copy to every home directory you wish to use it with (e.g. root, remote
+	server) and don't forget to set your default prompt in /etc/passwords.
