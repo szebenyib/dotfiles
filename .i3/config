@@ -22,7 +22,7 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # font pango:DejaVu Sans Mono 10
 
 # DPMS monitor setting (standby -> suspend -> off) (seconds)
-exec --no-startup-id xset dpms 300 600 900 &
+exec --no-startup-id xset dpms 900 1800 2700 &
 # Set custom wallpaper
 exec --no-startup-id feh --bg-fill ~/.i3/archlinux_motive.png
 
