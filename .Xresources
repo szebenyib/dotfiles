@@ -10,7 +10,17 @@ URxvt.scrollBar: false
 URxvt*background:      #090C19
 URxvt*foreground:      #E6E6E6
 URxvt*cursorColor:     #1AAA13
-URxvt*.font: xft:Inconsolata\-dz for Powerline:pixelsize=12
+#URxvt*.font: 9x15
+#URxvt*.font: xft:Inconsolata\-dz for Powerline:size=10:antialias=true
+URxvt*.font: xft:Deja Vu Sans Mono:size=10:antialias=true
+
+#urxvt*font: -*-terminus-medium-r-normal-*-12-120-72-72-c-60-iso8859-1
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
 ! X.org apps bg/fg
 *background: #D0CECB
 *foreground: #090C19
