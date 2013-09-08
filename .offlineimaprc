@@ -15,7 +15,7 @@ postsynchook = notmuch new
 
 [Repository szebenyib-local]
 type = Maildir
-localfolders = ~/.mail/szebenyib
+localfolders = /mnt/archhome/szebenyib/.mail/szebenyib
 nametrans = nt_local
 
 [Repository szebenyib-remote]

@@ -24,7 +24,7 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # DPMS monitor setting (standby -> suspend -> off) (seconds)
 exec --no-startup-id xset dpms 300 600 900 &
 # Set custom wallpaper
-exec --no-startup-id feh --bg-fill ~/.i3/newarchback.png
+exec --no-startup-id feh --bg-fill ~/.i3/archlinux_motive.png
 
 # Custom hotkeys for software #Balint
 # Thunar
@@ -63,9 +63,9 @@ bindsym $mod+Return exec urxvt
 #bindsym $mod+Return exec terminator
 
 # lock the screen with i3lock #Balint
-bindsym Ctrl+Mod1+l exec /bin/i3lock -i ~/.i3/newarchback.png
+bindsym Ctrl+Mod1+l exec /bin/i3lock -i ~/.i3/archlinux_motive.png
 #bindsym Ctrl+Mod1+u exec /bin/i3lock -i ~/.i3/newarchback.png && sudo pm-suspend
-bindsym Ctrl+Mod1+u exec /bin/i3lock -i ~/.i3/newarchback.png && sudo systemctl suspend
+bindsym Ctrl+Mod1+u exec /bin/i3lock -i ~/.i3/archlinux_motive.png && sudo systemctl suspend
 #Change keyboard layout
 bindsym Shift+Mod1+g exec --no-startup-id setxkbmap gb && xmodmap -e 'keycode 52=Y' && xmodmap -e 'keycode 29=Z' && notify-send "Keyboard layout" Gb
 bindsym Shift+Mod1+h exec --no-startup-id setxkbmap hu && notify-send "Keyboard layout" Hu
