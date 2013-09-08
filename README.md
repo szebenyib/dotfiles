@@ -13,6 +13,7 @@ Under construction :) as I'm learning git.
 + mpd
 + mutt
 + notmuch
++ ranger**
 + vim
 + hg
 + msmtp
@@ -20,6 +21,8 @@ Under construction :) as I'm learning git.
 + zsh
 
 	*can be replaced by "i3" package
+	**optional dependencies of ranger: libcaca, highlight, atool,
+	lynx, poppler, transmission-show, mediainfo
 
 ### AUR
 + urlview
