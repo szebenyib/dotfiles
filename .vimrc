@@ -62,7 +62,10 @@ let g:tex_flavor = "latex"
 
 set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
 
-""""""""""""""""""""""""""""""
+"Changing default output to pdf instead of dvi
+let g:Tex_DefaultTargetFormat = 'pdf'
+let g:Tex_MultipleCompileFormats='pdf, aux'"""""""""""""""""""""""""""
+
 " Mutt
 """"""""""""""""""""""""""""""
 "72 for mutt
