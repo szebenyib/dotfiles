@@ -42,6 +42,9 @@ Under construction :) as I'm learning git.
 2. choose appropriate branch
 3. setup apps
 
+- mutt
+	sudo chmod +x ~/.mutt/mutt_bgrun
+	sudo mv ~/.mutt/mutt_bgrun /usr/bin
 - keyring
 	~ python2
 	>>> import keyring
