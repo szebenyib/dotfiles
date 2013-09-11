@@ -10,6 +10,7 @@ Under construction :) as I'm learning git.
 + i3status*
 + feh
 + git
++ mpc
 + mpd
 + mutt
 + notmuch

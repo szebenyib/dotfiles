@@ -43,6 +43,7 @@ bindsym Shift+Mod1+k exec --no-startup-id ~/.i3/i3helper.sh keyboard_backlight t
 bindsym Shift+Mod1+d exec --no-startup-id ~/.i3/i3helper.sh dpms toggle
 # MPD pause/play toggle
 bindsym XF86HomePage exec --no-startup-id ~/.i3/i3helper.sh mpc toggle
+bindsym XF86AudioPlay exec --no-startup-id ~/.i3/i3helper.sh mpc toggle
 
 # Window - workspace assignment
 assign [class="Clementine"] 3: audio
