@@ -103,8 +103,18 @@ then
 	fi
 elif [ $1 = "mpc" ]
 then
-	if [ $2 = "toggle" ]
-	then
-		mpc -q toggle
-	fi
+	case $2 in
+		toggle)
+			mpc -q toggle
+			;;
+		next)
+			mpc -q next
+			;;
+		prev)
+			mpc -q prev
+			;;
+		stop)
+			mpc -q stop
+			;;
+	esac
 fi
