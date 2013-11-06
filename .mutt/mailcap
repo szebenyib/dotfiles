@@ -1,5 +1,5 @@
-application/acrobat; xpdf %s
-application/pdf; xpdf %s
+application/acrobat; evince %s
+application/pdf; evince %s
 application/postscript; gv %s
 application/x-dvi; xdvi %s
 audio/*; mplayer %s
@@ -10,6 +10,7 @@ image/png; feh %s
 image/tiff; feh %s
 image/x-portable-bitmap; display %s
 image/x-xpixmap; display %s
+text/html; firefox %s;
 text/html; echo && lynx -display-charset=UTF-8 --dump %s; nametemplate=%s.html; copiousoutput
 video/*; mplayer %s
 video/mpeg; mplayer %s
