@@ -29,15 +29,19 @@ syndaemon -t -k -i 2 -d &
 #exec startxfce4
 # ...or the Window Manager of your choice
 
-#slim
-case $1 in
-xfce4)
-	exec startxfce4
-	;;
-i3|*)
-	exec dbus-launch i3 
-	;;
-esac
+#slim 1.3.6-pre
+#case $1 in
+#gnome3)
+#	exec gnome-session
+#	;;
+#xfce4)
+#	exec startxfce4
+#	;;
+#i3|*)
+#	exec dbus-launch i3 
+#	;;
+#esac
+exec $1
 
 # Start a D-Bus session
 source /etc/X11/xinit/xinitrc.d/30-dbus
