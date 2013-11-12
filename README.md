@@ -35,8 +35,9 @@ Under construction :) as I'm learning git.
 + python2-gnomekeyring (used to store passwords to avoid plain text)
 + gnome-keyring (used to store passwords to avoid plain text)
 + j4-dmenu-desktop-git
++ liquidprompt-git
 
-	yaourt -S urlview goobook-git python2-keyring python2-gnomekeyring gnome-keyring j4
+	yaourt -S urlview goobook-git python2-keyring python2-gnomekeyring gnome-keyring j4 liquidprompt-git
 
 ## Installation
 1. git clone the repo
