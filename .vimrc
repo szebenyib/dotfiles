@@ -94,3 +94,12 @@ endfunction
 :map <F7> :set spell<CR>
 :map <F5> :setlocal spell spelllang=en_us<CR>
 :map <F6> :setlocal spell spelllang=hu<CR>
+
+
+""""""""""""""""""""""""""""""
+" Arduino
+""""""""""""""""""""""""""""""
+
+au BufRead,BufNewFile *.pde set filetype=arduino
+au BufRead,BufNewFile *.ino set filetype=arduino
+
