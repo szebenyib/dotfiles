@@ -62,7 +62,10 @@ let g:tex_flavor = "latex"
 
 set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
 
-""""""""""""""""""""""""""""""
+"Changing default output to pdf instead of dvi
+let g:Tex_DefaultTargetFormat = 'pdf'
+let g:Tex_MultipleCompileFormats='pdf, aux'"""""""""""""""""""""""""""
+
 " Mutt
 """"""""""""""""""""""""""""""
 "72 for mutt
@@ -82,3 +85,21 @@ function! HasPaste()
     en
     return ''
 endfunction
+
+""""""""""""""""""""""""""""""
+" Mappings
+""""""""""""""""""""""""""""""
+
+"Bind F7 to spell checking on
+:map <F7> :set spell<CR>
+:map <F5> :setlocal spell spelllang=en_us<CR>
+:map <F6> :setlocal spell spelllang=hu<CR>
+
+
+""""""""""""""""""""""""""""""
+" Arduino
+""""""""""""""""""""""""""""""
+
+au BufRead,BufNewFile *.pde set filetype=arduino
+au BufRead,BufNewFile *.ino set filetype=arduino
+

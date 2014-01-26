@@ -1,5 +1,5 @@
-application/acrobat; xpdf %s
-application/pdf; xpdf %s
+application/acrobat; evince %s
+application/pdf; evince %s
 application/postscript; gv %s
 application/x-dvi; xdvi %s
 audio/*; mplayer %s
@@ -10,7 +10,32 @@ image/png; feh %s
 image/tiff; feh %s
 image/x-portable-bitmap; display %s
 image/x-xpixmap; display %s
+text/html; firefox %s;
 text/html; echo && lynx -display-charset=UTF-8 --dump %s; nametemplate=%s.html; copiousoutput
 video/*; mplayer %s
 video/mpeg; mplayer %s
 text/plain; vim %s
+
+text/calendar; icalview.rb; copiousoutput
+application/octet-stream; less %s
+application/excel; mutt_bgrun libreoffice %s; test=test -n "$DISPLAY"
+application/excel; xlhtml %s |w3m -T text/html
+application/msexcel; mutt_bgrun libreoffice %s; test=test -n "$DISPLAY"
+application/msexcel; xlhtml %s |w3m -T text/html
+application/x-msexcel; mutt_bgrun libreoffice %s; test=test -n "$DISPLAY"
+application/x-msexcel; xlhtml %s |w3m -T text/html
+application/vnd.openxml; mutt_bgrun libreoffice %s; test=test -n "$DISPLAY"
+application/vnd.openxmlformats-officedocument.wordprocessingml.template; mutt_bgrun libreoffice %s; test=test -n "$DISPLAY"
+application/msword; mutt_bgrun libreoffice %s; test=test -n "$DISPLAY"
+application/x-msword; mutt_bgrun libreoffice %s; test=test -n "$DISPLAY"
+application/msword; antiword %s; copiousoutput
+application/vnd.ms-excel; mutt_bgrun libreoffice %s; test=test -n "$DISPLAY"
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; mutt_bgrun libreoffice %s; test=test -n "$DISPLAY"
+application/vnd.ms-excel; xlhtml %s |w3m -T text/html
+application/vnd.ms-powerpoint; mutt_bgrun libreoffice %s; test=test -n "$DISPLAY"
+application/x-mspowerpoint; mutt_bgrun libreoffice %s; test=test -n "$DISPLAY"
+application/vnd.openxmlformats-officedocument.presentationml.presentation; mutt_bgrun libreoffice %s; test=test -n "$DISPLAY"
+application/vnd.ms-powerpoint; ppthtml %s |w3m -T text/html
+application/vnd.openxmlformats-officedocument.wordprocessingml.document; mutt_bgrun libreoffice %s; test=test -n "$DISPLAY"
+application/pdf; mutt_bgrun evince %s 2>/dev/null; test=test -n "$DISPLAY"
+application/pdf; pdftotext -htmlmeta %s - |w3m -T text/html; copiousoutput

@@ -1,0 +1,77 @@
+##Basic defaults
+# Allow bold colors - necessary for some reason
+attrcolor b ".I"
+# Enables use of shift-PgUp and shift-PgDn
+termcapinfo xterm|xterms|xs|rxvt ti@:te@
+# Erase background with current bg color
+defbce "on"
+# Tell screen how to set colors. AB = background, AF=foreground
+terminfo rxvt-unicode 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+# Cache 30000 lines for scroll back
+defscrollback 30000
+# Character encoding
+setenv LC_CTYPE hu_HU.UTF-8
+defutf8 on
+# Don't annoy me
+startup_message off
+# Save activity on hangup
+autodetach on
+# Enable multiuser mode
+multiuser on
+#Restore window contents after using (e.g.) vim
+altscreen on
+
+##Messages
+# Activity message
+activity "%c activity -> %n%f %t"
+# Bell message
+bell_msg "%c bell -> %n%f %t^G"
+# VBell ringing
+vbell_msg " *Beep* "
+# Does not work yet
+pow_detach_msg "Screen session of \$LOGNAME \$:cr:\$:nl:ended."  # Emulate a logout msg
+# Funnier error messages
+nethack on
+
+##Startup and shell
+#Use the default shell
+shell -$SHELL
+
+##Autostart apps
+#screen -t zsh
+
+#caption always "%?%{ Wk}%-Lw%?%{Rk}%n*%f %t%?(%u)%?%?%{Wk}%+Lw%? %{Rk}%=%c %{rk}%d/%M/%Y"
+#hardstatus string "%{+b Rk}(%{-b g}$LOGNAME@%H%{+b R}) (%{-b g}%C %a%{+b R}) %{-b g} %n %t %h"
+#hardstatus off
+#hardstatus alwayslastline
+#hardstatus alwayslastline '%{= M} %H%{= B} %l %= %{= w}%-w%{+b r}%n*%t%{-b r}%{w}%+w %= %{c}%d %D %{B}%c '
+#hardstatus alwayslastline "%?%{rk}%-Lw%?%{Ck}%n*%f %t%?(%u)%?%?%{rk}%+Lw%?%{Yk} | %{mk}%1` %{yk}%=%2`"
+#hardstatus alwayslastline '%{= Kd} %{= Kd}%-w%{= Kr}[%{= KW}%n %t%{= Kr}]%{= Kd}%+w %-= %{KG} %H%{KW}|%{KY}%101`%{KW}|%D %M %d %Y%{= Kc} %C%A%{-}'
+hardstatus alwayslastline "%?%{wk}%-w%?%{kw}[%n %t]%?(%u)%?%{wk}%+w%?%{Yk} %= %{wk}[%H %l]"
+#hardstatus string "%{+b wk} %-w%{+b wk} %n %t %{-}%+w %41=%H @ %l %-= %= %D,%c:%s "
+#hardstatus alwayslastline "%{+b kr}[ %H ] %{ky} Load: %l %-=%{kb} %c  %d.%m.%Y"
+##hardstatus alwayslastline "%{+b kr}[ %H ] %{kw} Load: %l %-=%  %{kb} %c:%s  %d.%m.%Y "
+
+##Custom keybindings
+bind c screen 1
+bind 0 select 10
+bind = resize =
+bind + resize +1
+bind - resize -1
+bind _ resize max
+
+bind 'K' kill
+bind 'X' lockscreen
+bind 'I' login on
+bind 'O' login off
+bind '}' history
+
+bindkey -k k1 select 0
+bindkey -k k2 select 1
+bindkey -k k3 select 2
+bindkey -k k4 select 3
+bindkey -k k5 select 4
+bindkey -k k6 select 5
+bindkey -k k7 select 6
+bindkey -k k8 select 7
+bindkey -k k9 select 8

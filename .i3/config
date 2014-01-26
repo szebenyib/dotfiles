@@ -22,7 +22,7 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # font pango:DejaVu Sans Mono 10
 
 # DPMS monitor setting (standby -> suspend -> off) (seconds)
-exec --no-startup-id xset dpms 300 600 900 &
+exec --no-startup-id xset dpms 900 1800 2700 &
 # Set custom wallpaper
 exec --no-startup-id feh --bg-fill ~/.i3/archlinux_motive.png
 
@@ -41,8 +41,13 @@ bindsym XF86MonBrightnessDown exec --no-startup-id ~/.i3/i3helper.sh brightness 
 bindsym Shift+Mod1+k exec --no-startup-id ~/.i3/i3helper.sh keyboard_backlight toggle
 # DPMS on/off
 bindsym Shift+Mod1+d exec --no-startup-id ~/.i3/i3helper.sh dpms toggle
-# MPD pause/play toggle
+# MPD pause/play toggle, next, previous, stop
 bindsym XF86HomePage exec --no-startup-id ~/.i3/i3helper.sh mpc toggle
+bindsym XF86AudioPlay exec --no-startup-id ~/.i3/i3helper.sh mpc toggle
+bindsym XF86AudioStop exec --no-startup-id ~/.i3/i3helper.sh mpc stop
+bindsym XF86AudioPrev exec --no-startup-id ~/.i3/i3helper.sh mpc prev
+bindsym XF86AudioNext exec --no-startup-id ~/.i3/i3helper.sh mpc next
+
 
 # Window - workspace assignment
 assign [class="Clementine"] 3: audio
