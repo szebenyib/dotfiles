@@ -45,6 +45,9 @@ endif
 "Always show current position
 set ruler
 
+"Shows commang in the bottom right corner
+set showcmd
+
 """"""""""""""""""""""""""""""
 " => Status line
 """"""""""""""""""""""""""""""
