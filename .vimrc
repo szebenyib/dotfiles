@@ -6,6 +6,7 @@ execute pathogen#infect()
 
 "set syntax highlighting
 syntax on
+filetype on
 filetype plugin indent on
 
 "set auto read when file is changed outside
@@ -37,6 +38,15 @@ else
     set columns=100
   endif
 endif
+
+"copy to system clipboard by default
+set clipboard=unnamedplus
+
+""""""""""""""""""""""""""""""
+" Django
+""""""""""""""""""""""""""""""
+autocmd FileType python set ft=python.django " For SnipMate
+autocmd FileType html set ft=htmldjango.html " For SnipMate
 
 """"""""""""""""""""""""""""""
 " UI
