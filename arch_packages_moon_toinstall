@@ -41,6 +41,10 @@ gst-plugins-base
 gst-plugins-good
 gst-plugins-ugly
 gthumb
+#Provides nice look, themes
+gtk-engines
+#Provides nice look, themes
+gnome-themes-standard
 gtk-enkinge-murrine_O
 gtk2
 gtk3
@@ -122,8 +126,6 @@ thunar-volman
 ttf-bitstream-vera
 ttf-dejavu
 ttf-linux-liberinte-g
-ttf-monaco
-ttf-vista-fonts
 tzdata
 urlview
 vim-latexsuite
