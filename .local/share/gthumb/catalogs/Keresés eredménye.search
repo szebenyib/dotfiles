@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<search version="1.0">
+  <folder uri="catalog:///Teli%20Matra%20M.catalog" recursive="true"/>
+  <tests match="all">
+    <test id="comment::category" op="contains" value="balint"/>
+  </tests>
+</search>
