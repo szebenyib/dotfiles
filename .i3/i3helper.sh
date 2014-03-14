@@ -101,6 +101,9 @@ then
 				;;
 	esac
 	fi
+elif [ $1 = "touchpad" ]
+then
+	synclient TouchpadOff=$(synclient -l | grep -c 'TouchpadOff.*=.*0')
 elif [ $1 = "mpc" ]
 then
 	case $2 in

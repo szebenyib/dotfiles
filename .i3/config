@@ -39,6 +39,8 @@ bindsym XF86MonBrightnessUp exec --no-startup-id ~/.i3/i3helper.sh brightness up
 bindsym XF86MonBrightnessDown exec --no-startup-id ~/.i3/i3helper.sh brightness down
 # Keyboard brightness on/off
 bindsym Shift+Mod1+k exec --no-startup-id ~/.i3/i3helper.sh keyboard_backlight toggle
+# Touchpad on/off
+bindsym XF86TouchpadToggle exec --no-startup-id ~/.i3/i3helper.sh touchpad
 # DPMS on/off
 bindsym Shift+Mod1+d exec --no-startup-id ~/.i3/i3helper.sh dpms toggle
 # MPD pause/play toggle, next, previous, stop
