@@ -49,6 +49,7 @@ export SSH_AUTH_SOCK
 export GPG_AGENT_INFO
 export GNOME_KEYRING_CONTROL
 export GNOME_KEYRING_PID
+export DBUS_SESSION_BUS_ADDRESS DBUS_SESSION_BUS_PID
 
 #GPG
 eval $(gpg-agent --daemon) &

@@ -68,3 +68,12 @@ ${PR_BRACKET_OPEN}${PR_USER}${PR_HOST}${PR_USER_OP}${PR_BRACKET_CLOSE}$PR_PROMPT
 #Cursor
 #echo -ne "\033]12;#4E9A06\007"
 ##
+#
+# Export
+# Used by Virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/bin/virtualenvwrapper.sh
+export PIP_VIRTUALENV_BASE=$WORKON_HOME
+# Needed by virtualenvwrapper python2
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2
+export VIRTUALENVWRAPPER_VIRTUALENV=virtualenv2
