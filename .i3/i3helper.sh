@@ -99,10 +99,19 @@ then
 				echo 0 | sudo tee /sys/devices/platform/sony-laptop/kbd_backlight
 				notify-send "Keyboard backlight" "Switched off" -h "string:fgcolor:$HLCOLOR"
 				;;
-	esac
+		esac
 	fi
 elif [ $1 = "touchpad" ]
 then
+	current=`synclient -l | grep -c 'TouchpadOff.*=.*0'`
+	case $current in
+		0)
+		notify-send "Touchpad" "Switched on"
+		;;
+		1)
+		notify-send "Touchpad" "Switched off" -h "string:fgcolor:$HLCOLOR"
+		;;
+	esac
 	synclient TouchpadOff=$(synclient -l | grep -c 'TouchpadOff.*=.*0')
 elif [ $1 = "mpc" ]
 then
