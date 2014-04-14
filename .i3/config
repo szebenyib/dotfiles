@@ -169,8 +169,8 @@ bindsym $mod+odiaeresis workspace 10
 bindsym $mod+Tab workspace back_and_forth
 
 # scratchpad
-bindsym $mod+m move scratchpad
-bindsym $mod+o scratchpad show
+#bindsym $mod+m move scratchpad
+#bindsym $mod+o scratchpad show
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1: www
