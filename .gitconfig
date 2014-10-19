@@ -6,3 +6,8 @@
 	helper = cache --timeout=3600
 [core]
 	editor = vim
+[diff "word"]
+	textconv = catdoc
+[diff "odt"]
+	binary = true
+	textconv = /home/szebenyib/sys/odt-to-txt
