@@ -77,3 +77,4 @@ export PIP_VIRTUALENV_BASE=$WORKON_HOME
 # Needed by virtualenvwrapper python2
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2
 export VIRTUALENVWRAPPER_VIRTUALENV=virtualenv2
+export EDITOR=/usr/bin/vim
