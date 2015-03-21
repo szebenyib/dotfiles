@@ -4,6 +4,9 @@
 "pathogen
 execute pathogen#infect()
 
+"Needed for Vim R plugin
+set nocompatible
+
 "set syntax highlighting
 syntax on
 filetype on

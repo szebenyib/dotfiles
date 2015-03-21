@@ -17,6 +17,7 @@ alias zsc="vim -c ~/.zshrc"
 alias sps="sudo pacman -S "
 alias ls="ls --color=auto"
 alias lsl="ls -al"
+alias vim="vim --servername VIM"
 
 ## Use Prompt
 autoload -U promptinit

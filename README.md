@@ -63,3 +63,20 @@ Under construction :) as I'm learning git.
 	ln -s /path/to/music ~/music
 	sudo pacman -S pulseaudio-alsa
 	#Launch ncmpcpp and press 'u' to update the database
+
+4. vim-r-plugin
+
+- bash:
+	sudo pacman -S tmux wmctrl
+	mkdir ~/tmp/vimcom
+	R CMD INSTALL VimCom
+- R: install.packages(c("colorout", "setwidth"))
+- bash:
+	mkdir ~/tmp/vimr
+	cd ~/tmp/vimr
+	wget http://www.vim.org/scripts/download_script.php?src_id=22981
+	vim Vim-R-plugin.vmb
+- vim:
+	:so %
+	<hit space as needed>
+
