@@ -5,6 +5,7 @@ Under construction :) as I'm learning git.
 
 ## Needed/configured software by the dotfiles as denoted in ArchLinux repos.
 ### Pacman
++ curl
 + i3-wm*
 + i3lock*
 + i3status*
