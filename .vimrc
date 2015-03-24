@@ -3,9 +3,11 @@
 """"""""""""""""""""""""""""""
 "pathogen
 execute pathogen#infect()
+"generate helptags for everything in runtimepath
+call pathogen#helptags() 
 
 "Needed for Vim R plugin
-set nocompatible
+"set nocompatible
 
 "set syntax highlighting
 syntax on
@@ -25,7 +27,12 @@ set encoding=utf-8
 set list listchars=tab:→\ ,trail:·
 
 "color
-colorscheme jellybeans
+let g:solarized_termcolors=256
+set t_Co=256
+set background=dark
+colorscheme solarized
+"silent! colorscheme inori
+"colorscheme jellybeans
 
 "window size
 if has("gui_running")
@@ -44,6 +51,12 @@ endif
 
 "copy to system clipboard by default
 set clipboard=unnamedplus
+
+"general mapping
+:command WQ wq
+:command Wq wq
+:command W w
+:command Q q
 
 """"""""""""""""""""""""""""""
 " Django
