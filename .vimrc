@@ -20,6 +20,7 @@ Plugin 'gmarik/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 Plugin 'kien/ctrlp.vim'
+Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 " plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'L9'
