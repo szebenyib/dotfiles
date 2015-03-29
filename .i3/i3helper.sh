@@ -78,10 +78,10 @@ then
 	then
 		if [ -z `xset -q | egrep -o "Enabled"` ]
 		then 
-			`xset +dpms`
+			`xset +dpms && xset s on`
 			notify-send "DPMS" "Enabled"
 		else
-			`xset -dpms`
+			`xset -dpms && xset s off`
 			notify-send "DPMS" "Disabled" -h "string:fgcolor:$HLCOLOR"
 		fi
 	fi
