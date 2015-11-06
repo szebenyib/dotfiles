@@ -16,12 +16,15 @@ Under construction :) as I'm learning git.
 + mutt
 + notmuch
 + ncmpcpp**
++ python-virtualenv
++ python2-virtualenv
++ python-virtualenvwrapper
 + ranger***
 + vim
-+ hg
 + msmtp
 + offlineimap
 + zsh
++ grml-zsh-config
 
 	*can be replaced by "i3" package
 	**configured to use pulseaudio-alsa
@@ -36,15 +39,18 @@ Under construction :) as I'm learning git.
 + python2-gnomekeyring (used to store passwords to avoid plain text)
 + gnome-keyring (used to store passwords to avoid plain text)
 + j4-dmenu-desktop-git
-+ liquidprompt-git
++ (liquidprompt-git - removed as I am using grml-zsh-config)
 
-	yaourt -S urlview goobook-git python2-keyring python2-gnomekeyring gnome-keyring j4 liquidprompt-git
+	yaourt -S urlview goobook-git python2-keyring python2-gnomekeyring gnome-keyring j4-dmenu-desktop-git
 
 ## Installation
 1. git clone the repo
 2. choose appropriate branch
 3. setup apps
 
+- vim
+--	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+--	Launch vim and :PluginInstall
 - mutt
 	sudo chmod +x ~/.mutt/mutt_bgrun
 	sudo mv ~/.mutt/mutt_bgrun /usr/bin
