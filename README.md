@@ -87,3 +87,6 @@ Under construction :) as I'm learning git.
 	:so %
 	<hit space as needed>
 
+5. Renviron
+
+	mkdir .rlibs
