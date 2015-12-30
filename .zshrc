@@ -21,9 +21,14 @@ alias lsl="ls -al"
 alias vim="vim --servername VIM"
 
 
-export WORKON_HOME=$HOME/.virtualenvs 
+export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_VIRTUALENV=virtualenv2
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-source /usr/bin/virtualenvwrapper.sh 
+source /usr/bin/virtualenvwrapper.sh
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
 export EDITOR=/usr/bin/vim
+
+##Git slow autocompletion hack
+__git_files () {
+	_wanted files expl 'local files' _files
+}
