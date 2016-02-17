@@ -13,3 +13,5 @@
 	textconv = /home/szebenyib/sys/odt-to-txt
 [push]
 	default = simple
+[alias]
+	l = log --graph --decorate --oneline --all
