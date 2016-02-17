@@ -11,3 +11,5 @@
 [diff "odt"]
 	binary = true
 	textconv = /home/szebenyib/sys/odt-to-txt
+[push]
+	default = simple
