@@ -19,6 +19,7 @@ Plugin 'gmarik/Vundle.vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
+Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
@@ -174,7 +175,6 @@ endfunction
 :map <F5> :setlocal spell spelllang=en_us<CR>
 :map <F6> :setlocal spell spelllang=hu<CR>
 
-
 """"""""""""""""""""""""""""""
 " Arduino
 """"""""""""""""""""""""""""""
@@ -182,3 +182,21 @@ endfunction
 au BufRead,BufNewFile *.pde set filetype=arduino
 au BufRead,BufNewFile *.ino set filetype=arduino
 
+""""""""""""""""""""""""""""""
+" NERDTree
+""""""""""""""""""""""""""""""
+
+" Ctrl-n for NERDTree
+:map <C-n> :NERDTreeToggle<CR>
+
+" Autoopen vim if no file is specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+""""""""""""""""""""""""""""""
+" Markdown support
+""""""""""""""""""""""""""""""
+
+" You have to install markdown in your guest os
+
+nmap <leader>md :%!/usr/bin/markdown --html4tags<CR>
