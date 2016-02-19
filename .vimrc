@@ -19,6 +19,7 @@ Plugin 'gmarik/Vundle.vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
+Plugin 'easymotion/vim-easymotion'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
@@ -66,6 +67,9 @@ filetype plugin indent on    " required
 syntax on
 "filetype on
 "filetype plugin indent on
+
+"changing leader
+:let mapleader = "é"
 
 "set auto read when file is changed outside
 set autoread
@@ -210,3 +214,16 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " You have to install markdown in your guest os
 
 nmap <leader>md :%!/usr/bin/markdown --html4tags<CR>
+
+""""""""""""""""""""""""""""""
+" Easy motion
+""""""""""""""""""""""""""""""
+
+" Disable default mappings
+let g:EasyMotion_do_mapping = 0
+
+" Search for words with leader and w
+nmap a <Plug>(easymotion-overwin-f2)
+
+" Make it case insensitive
+let g:EasyMotion_smartcase = 1
