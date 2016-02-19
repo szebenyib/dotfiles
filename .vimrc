@@ -80,7 +80,7 @@ set encoding=utf-8
 set list listchars=tab:→\ ,trail:·
 
 "color
-let g:solarized_termcolors=256
+"let g:solarized_termcolors=256
 set t_Co=256
 set background=dark
 colorscheme solarized
