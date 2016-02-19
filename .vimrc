@@ -81,6 +81,22 @@ set encoding=utf-8
 "whitespace visualizing
 set list listchars=tab:→\ ,trail:·
 
+"automatic search while typing
+set incsearch
+
+"case insensitive search
+set ignorecase
+
+"automatic highlight all search matches
+set hlsearch
+
+"disable bak files
+set nobackup
+
+"change mapleader from / to -
+noremap - /
+noremap / -
+
 "color
 let g:solarized_termcolors=256
 set t_Co=256
