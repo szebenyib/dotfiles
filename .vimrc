@@ -27,6 +27,9 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'valloric/youcompleteme'
+Plugin 'sirver/ultisnips'
+Plugin 'ervandew/supertab'
+Plugin 'honza/vim-snippets'
 " plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -229,7 +232,27 @@ nmap <leader>md :%!/usr/bin/markdown --html4tags<CR>
 let g:EasyMotion_do_mapping = 0
 
 " Search for words with leader and w
-nmap a <Plug>(easymotion-overwin-f2)
+nmap é <Plug>(easymotion-overwin-f2)
 
 " Make it case insensitive
 let g:EasyMotion_smartcase = 1
+
+""""""""""""""""""""""""""""""
+" YouCompleteMe
+""""""""""""""""""""""""""""""
+
+let g:ycm_autoclose_preview_window_after_completion=1
+
+
+""""""""""""""""""""""""""""""
+" UtilSnips and YouCompleteMe using supertab
+""""""""""""""""""""""""""""""
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
