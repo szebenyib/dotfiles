@@ -6,6 +6,7 @@
 	helper = cache --timeout=3600
 [core]
 	editor = vim
+	autocrlf = input
 [diff "word"]
 	textconv = catdoc
 [diff "odt"]
