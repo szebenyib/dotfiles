@@ -28,6 +28,10 @@ Plugin 'valloric/youcompleteme'
 Plugin 'sirver/ultisnips'
 Plugin 'ervandew/supertab'
 Plugin 'honza/vim-snippets'
+Plugin 'airblade/vim-gitgutter'
+"Plugin 'tomtom/tcomment_vim'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-unimpaired'
 " plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -93,7 +97,9 @@ set incsearch
 set ignorecase
 
 "automatic highlight all search matches
+"and automatic disable afterwards
 set hlsearch
+nnoremap <esc> :noh<return><esc>
 
 "disable bak files
 set nobackup
@@ -101,6 +107,25 @@ set nobackup
 "change mapleader from / to -
 noremap - /
 noremap / -
+
+" Map key to toggle opt
+"nmap <F2> :set wrap!<CR>
+"function MapToggle(key, opt)
+"  let cmd = ':set '.a:opt.'! \| set '.a:opt."?\<CR>"
+"  exec 'nnoremap '.a:key.' '.cmd
+"  exec 'inoremap '.a:key." \<C-O>".cmd
+"endfunction
+"command -nargs=+ MapToggle call MapToggle(<f-args>)
+" Display-altering option toggles
+"MapToggle <F1> hlsearch
+"MapToggle <F2> wrap
+"MapToggle <F3> list
+"
+"" Behavior-altering option toggles
+"MapToggle <F10> scrollbind
+"MapToggle <F11> ignorecase
+"MapToggle <F12> paste
+"set pastetoggle=<F12>
 
 "color
 "let g:solarized_termcolors=256
@@ -207,8 +232,8 @@ endfunction
 :map <C-n> :NERDTreeToggle<CR>
 
 " Autoopen vim if no file is specified
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 """"""""""""""""""""""""""""""
 " Markdown support
