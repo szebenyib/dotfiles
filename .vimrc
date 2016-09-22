@@ -80,6 +80,9 @@ syntax on
 "changing leader
 :let mapleader = "é"
 
+"tab stop
+set tabstop=2
+
 "set auto read when file is changed outside
 set autoread
 
