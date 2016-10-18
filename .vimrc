@@ -83,6 +83,9 @@ syntax on
 "tab stop
 set tabstop=2
 
+"set shiftwidth for default indenting (javascript, ui5)
+set shiftwidth=2
+
 "set auto read when file is changed outside
 set autoread
 
