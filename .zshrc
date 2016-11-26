@@ -34,3 +34,7 @@ export EDITOR=/usr/bin/vim
 __git_files () {
 	_wanted files expl 'local files' _files
 }
+
+##Android development
+export ANDROID_HOME=$HOME/Android/Sdk
+
