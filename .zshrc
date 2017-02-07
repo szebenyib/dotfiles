@@ -19,7 +19,12 @@ alias sps="sudo pacman -S "
 alias ls="ls --color=auto"
 alias lsl="ls -al"
 alias vim="vim --servername VIM"
-
+alias audi="rdesktop -g 1920x1040 127.0.0.13:3390 -d DEAUDI00 -u v5v6roo -K"
+alias dmrv="rdesktop -g 1920x1040 127.0.0.2:13389 -K -d DMRV -u szebenyib"
+alias audis="rdesktop -g 1366x700 127.0.0.13:3390 -d DEAUDI00 -u v5v6roo -K"
+alias dmrvs="rdesktop -g 1366x700 127.0.0.2:13389 -K -d DMRV -u szebenyib"
+alias agcl="sudo pkill -f agclient && sh ~/sys/appgate/opt/APPGclnt/bin/agclient&"
+alias sapgl="sh /opt/SAPClients/SAPGUI7.40rev7/bin/guilogon"
 
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_VIRTUALENV=virtualenv2
@@ -35,4 +40,5 @@ __git_files () {
 
 ##Android development
 export ANDROID_HOME=$HOME/Android/Sdk
-
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
+export ANDROID_SDK_ROOT=$HOME/Android/Sdk
