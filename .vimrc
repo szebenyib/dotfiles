@@ -16,6 +16,8 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
+" Call PluginInstall once done or having changed plugins
+
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -34,6 +36,8 @@ Plugin 'airblade/vim-gitgutter'
 "Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-unimpaired'
+" For CSV highlighting and editing
+Plugin 'chrisbra/csv.vim'
 " plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'L9'
 " Git plugin not hosted on GitHub
