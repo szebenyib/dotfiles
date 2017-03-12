@@ -17,7 +17,7 @@ compinit
 alias zsc="vim -c ~/.zshrc"
 alias sps="sudo pacman -S "
 alias ls="ls --color=auto"
-alias lsl="ls -al"
+alias lsl="ls -alh"
 alias vim="vim --servername VIM"
 alias audi="rdesktop -g 1920x1040 127.0.0.13:3390 -d DEAUDI00 -u v5v6roo -K"
 alias dmrv="rdesktop -g 1920x1040 127.0.0.2:13389 -K -d DMRV -u szebenyib -r clipboard:PRIMARYCLIPBOARD"
