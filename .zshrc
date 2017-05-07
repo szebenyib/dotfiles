@@ -23,7 +23,8 @@ alias audi="rdesktop -g 1920x1040 127.0.0.13:3390 -d DEAUDI00 -u v5v6roo -K"
 alias dmrv="rdesktop -g 1920x1040 127.0.0.2:13389 -K -d DMRV -u szebenyib -r clipboard:PRIMARYCLIPBOARD -r disk:share=/home/szebenyib/win7_link/projektek/rdp_share"
 alias audis="rdesktop -g 1366x700 127.0.0.13:3390 -d DEAUDI00 -u v5v6roo -K"
 alias dmrvs="rdesktop -g 1366x700 127.0.0.2:13389 -K -d DMRV -u szebenyib -r clipboard:PRIMARYCLIPBOARD -r disk:share=/home/szebenyib/win7_link/projektek/rdp_share"
-alias agcl="sudo pkill -f agclient && sh ~/sys/appgate/opt/APPGclnt/bin/agclient&"
+alias agcl="sudo pkill -f agclient && sh ~/Dropbox/opsys/arch/sys/appgate/opt/APPGclnt/bin/agclient&"
+alias stu="stunnel ~/Dropbox/opsys/arch/sys/stunnel/stunnel.conf"
 alias sapgl="sh /opt/SAPClients/SAPGUI7.40rev7/bin/guilogon"
 
 export WORKON_HOME=$HOME/.virtualenvs
