@@ -51,6 +51,9 @@ Under construction :) as I'm learning git.
 - vim
 --	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 --	Launch vim and :PluginInstall
+- 	compile youcompleteme (without C support, for more info check ycm documentation):
+		cd .vim/bundle/youcompleteme
+		.install.py --tern-completer
 - mutt
 	sudo chmod +x ~/.mutt/mutt_bgrun
 	sudo mv ~/.mutt/mutt_bgrun /usr/bin
