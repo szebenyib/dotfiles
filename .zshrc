@@ -14,7 +14,7 @@ compinit
 #Based on: gnzh, agnoster
 
 ## Aliases
-alias zsc="vim -c ~/.zshrc"
+alias zsc="vim ~/.zshrc"
 alias sps="sudo pacman -S "
 alias ls="ls --color=auto"
 alias lsl="ls -alh"
@@ -26,6 +26,23 @@ alias dmrvs="rdesktop -g 1364x704 127.0.0.2:13389 -K -d DMRV -u szebenyib -r cli
 alias agcl="sudo pkill -f agclient && sh ~/Dropbox/opsys/arch/sys/appgate/opt/APPGclnt/bin/agclient&"
 alias stu="stunnel ~/Dropbox/opsys/arch/sys/stunnel/stunnel.conf"
 alias sapgl="sh /opt/SAPClients/SAPGUI7.40rev7/bin/guilogon"
+alias ga="git add"
+alias gc="git commit"
+alias gca="git commit --amend"
+alias gco="git checkout"
+alias gcob="git checkout -b"
+alias gl="git l"
+alias gk="gitk --all"
+alias gs="git status"
+alias gsu="git status -uno"
+alias gd="git diff"
+alias gr="git rebase -i"
+alias grc="git rebase --continue"
+alias gra="git rebase --abort"
+alias gm="git merge"
+alias gps="git push"
+alias gpl="git pull"
+alias gf="git fetch"
 
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_VIRTUALENV=virtualenv2
