@@ -60,3 +60,6 @@ __git_files () {
 export ANDROID_HOME=$HOME/Android/Sdk
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 export ANDROID_SDK_ROOT=$HOME/Android/Sdk
+
+##NPM global moved under home
+export PATH="$HOME/.node_modules_global/bin:$PATH"
