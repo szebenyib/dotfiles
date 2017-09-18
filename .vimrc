@@ -21,21 +21,66 @@ Plugin 'gmarik/Vundle.vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
+" For moving around by searching for letters
 Plugin 'easymotion/vim-easymotion'
+" For finding files in a folder tree
 Plugin 'scrooloose/nerdtree'
+" For finding files by name
 Plugin 'kien/ctrlp.vim'
+" For finding files by content
+Plugin 'mileszs/ack.vim'
+" For a better statusline
 Plugin 'bling/vim-airline'
+" For git support, editing and gutter
 Plugin 'tpope/vim-fugitive'
-Plugin 'valloric/youcompleteme'
-Plugin 'sirver/ultisnips'
-Plugin 'ervandew/supertab'
-Plugin 'honza/vim-snippets'
 Plugin 'airblade/vim-gitgutter'
+" For autocompletion
+Plugin 'valloric/youcompleteme'
+" For snippets
+Plugin 'sirver/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'ervandew/supertab'
 "Plugin 'tomtom/tcomment_vim'
+" For comment toggling
 Plugin 'tpope/vim-commentary'
+" For some quick actions
 Plugin 'tpope/vim-unimpaired'
+" For easier management of surrounding tags, apostrophes
+Plugin 'tpope/vim-surround'
 " For CSV highlighting and editing
 Plugin 'chrisbra/csv.vim'
+" For javascript completion
+Plugin 'ternjs/tern_for_vim'
+" For javascript linting
+if has('nvim')
+	" Linting
+	Plugin 'neomake/neomake'
+	" Location list opener
+	let g:neomake_open_list = 2
+	let g:neomake_list_height = 3
+	" Replacing default markers
+	let g:neomake_warning_sign = {
+		\ 'text': 'W',
+		\ 'texthl': 'WarningMsg',
+		\ }
+	let g:neomake_error_sign = {
+		\ 'text': 'E',
+		\ 'texthl': 'ErrorMsg',
+		\ }
+	" Autoclose location window
+	aug QFClose
+	au!
+	au WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&buftype") == "quickfix"|q|endif
+	aug END
+else
+	" Linting
+	Plugin 'vim-syntastic/syntastic'
+endif
+" For javascript syntax highlight
+Plugin 'pangloss/vim-javascript'
+" For json syntax highlight
+Plugin 'elzr/vim-json'
+
 " plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -146,21 +191,26 @@ colorscheme solarized
 "colorscheme jellybeans
 
 "window size
-if has("gui_running")
-  " GUI is running or is about to start.
-  " Maximize gvim window.
-  set lines=999 columns=999
+if has("nvim")
+
 else
-  " This is console Vim.
-  if exists("+lines")
-    set lines=50
-  endif
-  if exists("+columns")
-    set columns=100
-  endif
+	if has("gui_running")
+		" GUI is running or is about to start.
+		" Maximize gvim window.
+		set lines=999 columns=999
+	else
+		" This is console Vim.
+		if exists("+lines")
+			set lines=50
+		endif
+		if exists("+columns")
+			set columns=100
+		endif
+	endif
 endif
 
 "copy to system clipboard by default
+" Install xclip for neovim
 set clipboard=unnamedplus
 
 "general mapping
@@ -272,10 +322,10 @@ let g:EasyMotion_smartcase = 1
 
 let g:ycm_autoclose_preview_window_after_completion=1
 
-
 """"""""""""""""""""""""""""""
 " UtilSnips and YouCompleteMe using supertab
 """"""""""""""""""""""""""""""
+
 " make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
@@ -285,3 +335,40 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+""""""""""""""""""""""""""""""
+" Tern, javascript, eslint
+""""""""""""""""""""""""""""""
+
+if has('nvim')
+	autocmd! BufWritePost,BufEnter * Neomake
+	let g:neomake_javascript_enabled_makers = ['eslint']
+	let g:neomake_css_enabled_makers = ['csslint']
+else
+	" set statusline+=%#warningmsg#
+	" set statusline+=%{SyntasticStatuslineFlag()}
+	" set statusline+=%*
+	" let g:syntastic_always_populate_loc_list = 1
+	" let g:syntastic_auto_loc_list = 1
+	" let g:syntastic_check_on_open = 1
+	" let g:syntastic_check_on_wq = 0
+
+	" let g:syntastic_javascript_checkers = ['eslint']
+	" " Via package.json/scripts/lint:
+	" " let g:syntastic_javascript_eslint_exe = 'npm run lint --'
+	" let g:syntastic_javascript_eslint_exe = '$(npm bin)/eslint_d'
+endif
+
+""""""""""""""""""""""""""""""
+" CtrlP
+""""""""""""""""""""""""""""""
+
+let g:ctrlp_custom_ignore = 'node_modules\|git'
+
+""""""""""""""""""""""""""""""
+" Ack/Ag use Ag
+""""""""""""""""""""""""""""""
+
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
