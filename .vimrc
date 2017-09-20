@@ -344,6 +344,8 @@ if has('nvim')
 	autocmd! BufWritePost,BufEnter * Neomake
 	let g:neomake_javascript_enabled_makers = ['eslint']
 	let g:neomake_css_enabled_makers = ['csslint']
+	let g:neomake_json_enabled_makers = ['jsonlint']
+	let g:neomake_markdown_enabled_makers = ['markdownlint']
 else
 	" set statusline+=%#warningmsg#
 	" set statusline+=%{SyntasticStatuslineFlag()}
