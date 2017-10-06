@@ -320,7 +320,8 @@ let g:EasyMotion_smartcase = 1
 " YouCompleteMe
 """"""""""""""""""""""""""""""
 
-let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_autoclose_preview_window_after_completion=0
+let g:ycm_autoclose_preview_window_after_insertion=1
 
 """"""""""""""""""""""""""""""
 " UtilSnips and YouCompleteMe using supertab
