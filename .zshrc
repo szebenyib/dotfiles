@@ -24,7 +24,7 @@ alias audi="cat ~/.rdp_credentials/audi | xfreerdp /v:127.0.0.11:3390 /d:DEAUDI0
 alias audiold="rdesktop -g 1920x1040 127.0.0.11:3390 -d DEAUDI00 -u v5v6roo -K"
 alias audi2="rdesktop -g 1920x1040 127.0.0.13:3390 -d DEAUDI00 -u v5v6roo -K"
 alias dmrv="rdesktop -g 1920x1040 127.0.0.2:13389 -K -d DMRV -u szebenyib -r clipboard:PRIMARYCLIPBOARD -r disk:share=/home/szebenyib/win7_link/projektek/rdp_share"
-alias audis="cat ~/.rdp_credentials/audi | xfreerdp /v:127.0.0.11:3390 /d:DEAUDI00 /u:v5v6roo /size:1364x704 -grab-keyboard"
+alias audis="cat ~/.rdp_credentials/audi | xfreerdp /v:127.0.0.11:3390 /d:DEAUDI00 /u:v5v6roo /size:1364x704 -grab-keyboard /from-stdin"
 alias audisold="rdesktop -g 1364x704 127.0.0.11:3390 -d DEAUDI00 -u v5v6roo -K"
 alias audis2="rdesktop -g 1364x704 127.0.0.13:3390 -d DEAUDI00 -u v5v6roo -K"
 alias dmrvs="rdesktop -g 1364x704 127.0.0.2:13389 -K -d DMRV -u szebenyib -r clipboard:PRIMARYCLIPBOARD -r disk:share=/home/szebenyib/win7_link/projektek/rdp_share"
