@@ -80,6 +80,8 @@ endif
 Plugin 'pangloss/vim-javascript'
 " For json syntax highlight
 Plugin 'elzr/vim-json'
+" For same-key tmux and vim navigation
+Plugin 'christoomey/vim-tmux-navigator'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'L9'
