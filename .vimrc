@@ -366,7 +366,8 @@ endif
 " CtrlP
 """"""""""""""""""""""""""""""
 
-let g:ctrlp_custom_ignore = 'node_modules\|git'
+" Ignoring: node, git, jsdoc
+let g:ctrlp_custom_ignore = 'node_modules\|git\|out'
 
 """"""""""""""""""""""""""""""
 " Ack/Ag use Ag
