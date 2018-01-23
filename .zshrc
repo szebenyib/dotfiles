@@ -48,6 +48,7 @@ alias gm="git merge"
 alias gps="git push"
 alias gpl="git pull"
 alias gf="git fetch"
+alias ts="tig status"
 
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_VIRTUALENV=virtualenv2
