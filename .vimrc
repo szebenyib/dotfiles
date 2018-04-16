@@ -84,6 +84,10 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'elzr/vim-json'
 " For same-key tmux and vim navigation
 Plugin 'christoomey/vim-tmux-navigator'
+" For on-the-fly markdown display
+" Make sure that xdg-util and curl are installed
+" And npm install -g instant-markdown-d
+Plugin 'suan/vim-instant-markdown'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'L9'
