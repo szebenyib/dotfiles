@@ -88,6 +88,8 @@ Plugin 'christoomey/vim-tmux-navigator'
 " Make sure that xdg-util and curl are installed
 " And npm install -g instant-markdown-d
 Plugin 'suan/vim-instant-markdown'
+" For a calendar
+Plugin 'itchyny/calendar.vim'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'L9'
@@ -395,3 +397,12 @@ let g:ctrlp_custom_ignore = 'node_modules\|git\|out'
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
+""""""""""""""""""""""""""""""
+" Calendar google integration
+""""""""""""""""""""""""""""""
+
+let g:calendar_google_calendar = 1
+let g:calendar_google_task = 1
+:nmap <expr> <F3> &ft ==# 'calendar' ? "\<Plug>(calendar_exit)" : ":\<C-u>Calendar\<CR>"
+:nmap <expr> <F4> &ft ==# 'calendar' ? "\<Plug>(calendar_exit)" : ":\<C-u>Calendar -view=year -split=vertical -width=27\<CR>"
