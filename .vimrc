@@ -47,6 +47,8 @@ Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-unimpaired'
 " For easier management of surrounding tags, apostrophes
 Plugin 'tpope/vim-surround'
+" For mass replace across files
+Plugin 'yegappan/greplace'
 " For CSV highlighting and editing
 Plugin 'chrisbra/csv.vim'
 " For javascript completion
@@ -249,9 +251,10 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 """"""""""""""""""""""""""""""
 " Latex stuff based here automatically
 """"""""""""""""""""""""""""""
-set grepprg=grep\ -nH\ $*
-let g:tex_flavor = "latex"
 
+" Overwritten with ag for Gsearch
+" set grepprg=grep\ -nH\ $*
+let g:tex_flavor = "latex"
 
 "Changing default output to pdf instead of dvi
 let g:Tex_DefaultTargetFormat = 'pdf'
@@ -338,6 +341,16 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+
+""""""""""""""""""""""""""""""
+" Gsearch - mass replace
+""""""""""""""""""""""""""""""
+
+" Updating grepprg will have consequences on other commands
+" that rely on grep vim command
+set grepprg=ag
+let g:grep_cmd_opts = '--line-numbers --noheading'
 
 """"""""""""""""""""""""""""""
 " Tern, javascript, eslint
