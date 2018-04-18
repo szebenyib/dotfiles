@@ -51,7 +51,7 @@ alias gf="git fetch"
 alias ts="tig status"
 
 export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_VIRTUALENV=virtualenv2
+export VIRTUALENVWRAPPER_VIRTUALENV=virtualenv
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 source /usr/bin/virtualenvwrapper.sh
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
