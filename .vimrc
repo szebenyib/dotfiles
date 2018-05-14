@@ -84,12 +84,22 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'elzr/vim-json'
 " For same-key tmux and vim navigation
 Plugin 'christoomey/vim-tmux-navigator'
+" For test running in a split
+Plugin 'christoomey/vim-tmux-runner'
+" For test running shortcuts
+Plugin 'gabebw/vim-spec-runner'
 " For on-the-fly markdown display
 " Make sure that xdg-util and curl are installed
 " And npm install -g instant-markdown-d
 Plugin 'suan/vim-instant-markdown'
 " For a calendar
 Plugin 'itchyny/calendar.vim'
+" For python folding
+Plugin 'tmhedberg/SimpylFold'
+" For python indentation
+Plugin 'vim-scripts/indentpython.vim'
+" For python PEP8 checks
+Plugin 'nvie/vim-flake8'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'L9'
@@ -199,6 +209,12 @@ set background=dark
 colorscheme solarized
 "silent! colorscheme inori
 "colorscheme jellybeans
+"call togglebg#map("<F2>")
+
+"enable folding via space
+set foldmethod=indent
+set foldlevel=99
+nnoremap <space> za
 
 "window size
 if has("nvim")
@@ -228,6 +244,25 @@ set clipboard=unnamedplus
 :command Wq wq
 :command W w
 :command Q q
+
+"highlight
+let python_highlight_all=1
+
+"to not have to install neovim in every virtualenv
+"That would miss autocompletion for packages installed for the env
+let g:python3_host_prog = '/home/szebenyib/.virtualenvs/neovim/bin/python'
+
+""" Filetype based settings """
+" Pyton
+au BufNewFile,BufRead *.py
+    \ set tabstop=4
+    \| set softtabstop=4
+    \| set shiftwidth=4
+    \| set textwidth=79
+    \| set expandtab
+    \| set autoindent
+    \| set fileformat=unix
+"au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 """"""""""""""""""""""""""""""
 " Django
@@ -301,6 +336,8 @@ endfunction
 
 " Ctrl-n for NERDTree
 :map <C-n> :NERDTreeToggle<CR>
+" Hide pyc
+let NERDTreeIgnore=['\.pyc$', '\~$']
 
 " Autoopen vim if no file is specified
 " autocmd StdinReadPre * let s:std_in=1
@@ -333,6 +370,7 @@ let g:EasyMotion_smartcase = 1
 
 let g:ycm_autoclose_preview_window_after_completion=0
 let g:ycm_autoclose_preview_window_after_insertion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 """"""""""""""""""""""""""""""
 " UtilSnips and YouCompleteMe using supertab
@@ -388,7 +426,7 @@ endif
 """"""""""""""""""""""""""""""
 
 " Ignoring: node, git, jsdoc
-let g:ctrlp_custom_ignore = 'node_modules\|git\|out'
+let g:ctrlp_custom_ignore = 'node_modules\|git\|out\|__pycache__'
 
 """"""""""""""""""""""""""""""
 " Ack/Ag use Ag
@@ -406,3 +444,41 @@ let g:calendar_google_calendar = 1
 let g:calendar_google_task = 1
 :nmap <expr> <F3> &ft ==# 'calendar' ? "\<Plug>(calendar_exit)" : ":\<C-u>Calendar\<CR>"
 :nmap <expr> <F4> &ft ==# 'calendar' ? "\<Plug>(calendar_exit)" : ":\<C-u>Calendar -view=year -split=vertical -width=27\<CR>"
+
+""""""""""""""""""""""""""""""
+" Vim tmux runner
+""""""""""""""""""""""""""""""
+
+let g:VtrUseVtrMaps = 1
+"  Mapping      |   Command
+"  -----------------------------
+"  <leader>rr   |   VtrResizeRunner<cr>
+"  <leader>ror  |   VtrReorientRunner<cr>
+"  <leader>sc   |   VtrSendCommandToRunner<cr>
+"  <leader>sl   |   VtrSendLinesToRunner<cr>
+"  <leader>or   |   VtrOpenRunner<cr>
+"  <leader>kr   |   VtrKillRunner<cr>
+"  <leader>fr   |   VtrFocusRunner<cr>
+"  <leader>dr   |   VtrDetachRunner<cr>
+"  <leader>ar   |   VtrReattachRunner<cr>
+"  <leader>cr   |   VtrClearRunner<cr>
+"  <leader>fc   |   VtrFlushCommand<cr>
+let g:VtrPercentage = 35
+let g:VtrGitCdUpOnOpen = 1
+nmap <Leader>t :VtrSendCommandToRunner! python -m unittest<CR>
+
+" """"""""""""""""""""""""""""""
+" " Vim spec runner
+" """"""""""""""""""""""""""""""
+
+" " For tmux-runner integration
+" let g:spec_runner_dispatcher = "VtrSendCommand! {command}"
+
+" " Use <Leader>t to run the current spec file.
+" map <Leader>t <Plug>RunCurrentSpecFile
+
+" " Use <Leader>u to run the current line in a spec.
+" map <Leader>u <Plug>RunFocusedSpec
+
+" " Use <Leader>v to explicitly run the most recent spec.
+" map <Leader>v <Plug>RunMostRecentSpec
