@@ -402,6 +402,13 @@ let g:grep_cmd_opts = '--line-numbers --noheading'
 
 if has('nvim')
 	autocmd! BufWritePost,BufEnter * Neomake
+endif
+
+""""""""""""""""""""""""""""""
+" Tern, javascript, eslint
+""""""""""""""""""""""""""""""
+
+if has('nvim')
 	let g:neomake_javascript_enabled_makers = ['eslint']
 	let g:neomake_css_enabled_makers = ['csslint']
 	let g:neomake_json_enabled_makers = ['jsonlint']
@@ -422,11 +429,19 @@ else
 endif
 
 """"""""""""""""""""""""""""""
+" Python
+""""""""""""""""""""""""""""""
+
+if has('nvim')
+	let g:neomake_python_enabled_makers = ['flake8']
+endif
+
+""""""""""""""""""""""""""""""
 " CtrlP
 """"""""""""""""""""""""""""""
 
 " Ignoring: node, git, jsdoc
-let g:ctrlp_custom_ignore = 'node_modules\|git\|out\|__pycache__'
+let g:ctrlp_custom_ignore = 'node_modules\|git\|out\|__pycache__\.pyc'
 
 """"""""""""""""""""""""""""""
 " Ack/Ag use Ag
